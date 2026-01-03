@@ -36,3 +36,13 @@ RUN echo "source /opt/ros/${ROS_DISTRO}/setup.bash" >> ~/.bashrc
 ################################
 ## ADD ANY CUSTOM SETUP BELOW ##
 ################################
+RUN mkdir -p /tmp/livox_build/source
+COPY ./installation_files/Livox-SDK /tmp/livox_build/source
+
+RUN set -ex; \
+    cd /tmp/livox_build; \
+    mkdir build; \
+    cd build; \
+    cmake ../source; \
+    make -j$(nproc); \
+    sudo make install
