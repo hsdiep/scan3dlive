@@ -57,6 +57,7 @@ RUN set -ex; \
 
 # RUN sudo mkdir -p /etc/udev/rules.d
 # RUN sudo touch /etc/udev/rules.d/99-slabs.rules
+RUN sudo apt-get install -y usbutils
 
 RUN sudo apt-get install -y libusb-1.0-0-dev libhidapi-libusb0 libhidapi-dev
 RUN sudo apt-get install -y udev
