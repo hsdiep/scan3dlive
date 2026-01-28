@@ -23,13 +23,13 @@ def generate_launch_description():
 
 
   r3live_config = os.path.join(
-      get_package_share_directory('r3live'),
+      get_package_share_directory('lidar_driver'),
       'config',
-      r3live_config_file
+      'r3live_config.yaml'
       )
 
   rviz_config = os.path.join(
-      get_package_share_directory('r3live'),
+      get_package_share_directory('lidar_driver'),
       'config',
       'rviz',
       'r3live_rviz2_config.rviz'
