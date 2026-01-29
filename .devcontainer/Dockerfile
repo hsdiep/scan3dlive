@@ -1,4 +1,5 @@
-FROM osrf/ros:humble-desktop-full
+# FROM osrf/ros:humble-desktop-full
+FROM ros:humble-ros-base
 
 # Add ubuntu user with same UID and GID as your host system, if it doesn't already exist
 # Since Ubuntu 24.04, a non-root user is created by default with the name vscode and UID=1000
@@ -64,6 +65,7 @@ RUN sudo apt-get install -y udev
 RUN set -ex; \
     # cd /tmp/scan3dlive_install_files/source/zed-open-capture/udev; \
     # bash install_udev_rule.sh; \
+    sudo apt-get install -y libopencv-dev libopencv-viz-dev; \
     cd /tmp/scan3dlive_install_files/build; \
     mkdir zed-open-capture; \
     cd zed-open-capture; \
